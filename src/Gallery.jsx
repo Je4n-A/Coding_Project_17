@@ -1,12 +1,23 @@
 // Gallery.jsx
+/**
+ * Gallery Component
+ * Displays a responsive grid of tour cards with interactive features
+ * Handles data fetching, loading states, and error management
+ * @returns {JSX.Element} Rendered gallery of tour items
+ */
 import { useState, useEffect } from 'react';
 import './Gallery.css';
 
 function Gallery() {
+  // State management for tours data, loading status, and error handling
   const [tours, setTours] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  /**
+   * Fetches tour data from the API
+   * Handles loading states and error scenarios
+   */
   const fetchTours = async () => {
     try {
       setLoading(true);
@@ -17,10 +28,12 @@ function Gallery() {
         }
       });
       
+      // Handle non-200 responses
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
+      // Transform data to include showMore state for each tour
       const data = await response.json();
       setTours(data.map(tour => ({ ...tour, showMore: false })));
       setError(null);
@@ -32,20 +45,30 @@ function Gallery() {
     }
   };
 
+  // Fetch tours data on component mount
   useEffect(() => {
     fetchTours();
   }, []);
 
+  /**
+   * Removes a tour from the list
+   * @param {string} id - The ID of the tour to remove
+   */
   const removeTour = (id) => {
     setTours(tours.filter((tour) => tour.id !== id));
   };
 
+  /**
+   * Toggles the expanded/collapsed state of tour description
+   * @param {string} id - The ID of the tour to toggle
+   */
   const toggleReadMore = (id) => {
     setTours(tours.map((tour) => 
       tour.id === id ? { ...tour, showMore: !tour.showMore } : tour
     ));
   };
 
+  // Conditional rendering for loading state
   if (loading) {
     return (
       <div className="loading">
@@ -54,6 +77,7 @@ function Gallery() {
     );
   }
 
+  // Conditional rendering for error state
   if (error) {
     return (
       <div className="error-container">
@@ -63,6 +87,7 @@ function Gallery() {
     );
   }
 
+  // Conditional rendering for empty tours list
   if (tours.length === 0) {
     return (
       <div className="empty-tours">

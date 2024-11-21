@@ -2,6 +2,12 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Gallery from './Gallery';
 import './App.css';
 
+/**
+ * Main App component that handles routing and layout
+ * Uses React Router for navigation between Home and Gallery pages
+ * @returns {JSX.Element} The main application component
+ */
+
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +29,12 @@ function App() {
     </BrowserRouter>
   );
 }
+
+/**
+ * Home component displaying the landing page
+ * Contains welcome message and navigation to tours
+ * @returns {JSX.Element} The home page component
+ */
 
 function Home() {
   return (

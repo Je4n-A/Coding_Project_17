@@ -1,4 +1,6 @@
-/* Gallery.css */
+/* Gallery.css - Main styling for the tour gallery component */
+
+/* Main gallery container with card-style layout and subtle shadow */
 .gallery {
   padding: 2rem;
   max-width: 1200px;
@@ -9,6 +11,7 @@
   font-family: 'Calibri', sans-serif;
 }
 
+/* Responsive grid layout using auto-fill for dynamic column count */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -16,55 +19,65 @@
   padding: 1rem;
 }
 
+/* Individual tour card with hover animation effects */
 .gallery-item {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   background: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
 }
 
+/* Hover animation lifting card and enhancing shadow */
 .gallery-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Tour image styling with aspect ratio maintenance */
 .gallery-item img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: cover; /* Prevents image distortion */
   border-bottom: 1px solid #ddd;
 }
 
+/* Container for tour details and actions */
 .tour-info {
   padding: 1rem;
 }
 
+/* Tour title styling */
 .tour-info h3 {
   margin: 0;
   color: #333;
 }
 
+/* Price display styling */
 .tour-price {
   color: #4a90e2;
   font-weight: bold;
   margin: 0.5rem 0;
 }
 
+/* Tour description text styling */
 .tour-info p {
   color: #666;
-  line-height: 1.6;
+  line-height: 1.6; /* Improved readability */
 }
 
+/* Shared styles for status containers */
 .loading, .error-container, .empty-tours {
   text-align: center;
   padding: 2rem;
 }
 
+/* Base button styling */
 button {
   background: #4a90e2;
   color: white;
+  /* Additional button styles continue... */
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
