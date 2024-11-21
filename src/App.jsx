@@ -6,11 +6,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        <header>
-          <h1>Comparison App</h1>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/gallery">Tours</Link>
+        <header className="app-header">
+          <h1>Tour Comparison App</h1>
+          <nav className="app-nav">
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/gallery" className="nav-link">Tours</Link>
           </nav>
         </header>
         <main>
@@ -26,12 +26,11 @@ function App() {
 
 function Home() {
   return (
-    <div>
-      <h2>Welcome to Tour Comparison</h2>
-      <p>Click on Tours to explore and compare available travle packages.</p>
+    <div className="home">
+      <h2>Welcome To Your Tour Guide </h2>
+      <p>Click on the button below to explore and compare available travel packages.</p>
       <nav className="home-nav">
-        <Link to="/" className="nav-button">Home</Link>
-        <Link to="/gallery" className="nav-button">Tours</Link>
+        <Link to="/gallery" className="nav-button">Explore Tours</Link>
       </nav>
     </div>
   );
