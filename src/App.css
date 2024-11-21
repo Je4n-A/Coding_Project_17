@@ -40,3 +40,26 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.home {
+  text-align: center;
+  padding: 2rem;
+}
+
+.home-nav {
+  margin-top: 2rem;
+}
+
+.nav-button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+}

@@ -7,10 +7,10 @@ function App() {
     <BrowserRouter>
       <div className="app">
         <header>
-          <h1>Photo Gallery App</h1>
+          <h1>Comparison App</h1>
           <nav>
             <Link to="/">Home</Link>
-            <Link to="/gallery">Gallery</Link>
+            <Link to="/gallery">Tours</Link>
           </nav>
         </header>
         <main>
@@ -27,8 +27,12 @@ function App() {
 function Home() {
   return (
     <div>
-      <h2>Welcome to the Photo Gallery App</h2>
-      <p>Click on the Gallery link to view tours.</p>
+      <h2>Welcome to Tour Comparison</h2>
+      <p>Click on Tours to explore and compare available travle packages.</p>
+      <nav className="home-nav">
+        <Link to="/" className="nav-button">Home</Link>
+        <Link to="/gallery" className="nav-button">Tours</Link>
+      </nav>
     </div>
   );
 }
