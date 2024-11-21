@@ -10,12 +10,11 @@ function Gallery() {
   const fetchTours = async () => {
     try {
       setLoading(true);
-      const response = await fetch('https://course-api.com/react-tours-project', {
+      const response = await fetch('/api/react-tours-project', {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-        },
-        mode: 'cors'
+        }
       });
       
       if (!response.ok) {
